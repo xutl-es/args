@@ -1,11 +1,11 @@
-import { resolve } from 'path';
+import { resolve, basename } from 'path';
 
 const re_assignment = /^(--\w+)=(.*)$/;
 const re_flag = /^-(\w+)$/;
 
 export function extract(argv: string[]): string[] {
 	const args = [...argv];
-	if (args[0] && resolve(args[0]) === resolve(process.argv0)) args.shift();
+	if (args[0] && (resolve(args[0]) === resolve(process.argv0) || basename(args[0]) === 'node')) args.shift();
 	if (args[0] && require.main && resolve(args[0]) === resolve(require.main.filename)) args.shift();
 	const result: string[] = [];
 	let done = false;
