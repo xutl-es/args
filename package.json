@@ -1,0 +1,34 @@
+{
+	"name": "@xutl/args",
+	"version": "1.0.0",
+	"description": "CLI Argument Parser",
+	"main": "dist/args.js",
+	"scripts": {
+		"test": "xutltest 'dist/test/*.js'",
+		"build": "tsc",
+		"clean": "rm -rf dist/",
+		"prepublishOnly": "npm run clean && npm run build && npm test",
+		"try": "npm run build && npm test"
+	},
+	"files": [
+		"dist/args.js",
+		"dist/args.d.ts",
+		"dist/extract.js",
+		"dist/extract.d.ts",
+		"dist/utils.js",
+		"dist/utils.d.ts",
+		"dist/types.js",
+		"dist/types.d.ts"
+	],
+	"keywords": [
+		"CLI",
+		"Arguments"
+	],
+	"author": "Philipp Dunkel <pip@pipobscure.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^15.6.1",
+		"@xutl/test": "^1.0.2",
+		"typescript": "^4.3.2"
+	}
+}
