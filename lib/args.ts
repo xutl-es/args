@@ -11,14 +11,14 @@ export function parse(args: string[], ...extractors: Extractor[]): string[] & { 
 	args = extract(args);
 	extractors.forEach((e) => e(params, []));
 	while (args[0] && args[0][0] === '-') {
-		const args0 = args[0];
-		if (args0 === '--') break;
+		const len = args.length;
+		if (args[0] === '--') break;
 		for (const extractor of extractors) {
-			const arg0: string = args[0];
+			const len = args.length;
 			args = extractor(params, args);
-			if (arg0 !== args[0]) break;
+			if (args.length !== len) break;
 		}
-		if (args0 === args[0]) break;
+		if (args.length === len) break;
 	}
 	if (args[0] === '--') {
 		args.shift();
