@@ -18,7 +18,6 @@ export function parse(args: string[], ...extractors: Extractor[]): string[] & { 
 			args = extractor(params, args);
 			if (arg0 !== args[0]) break;
 		}
-		if (args0 === args[0]) break;
 	}
 	if (args[0] === '--') {
 		args.shift();
