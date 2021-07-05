@@ -1,6 +1,6 @@
 {
 	"name": "@xutl/args",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "CLI Argument Parser",
 	"main": "dist/args.js",
 	"scripts": {
